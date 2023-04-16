@@ -4,7 +4,7 @@ import useFetch from "../hooks/useFetch";
 
 const Home = () => {
 
-    const [cars] = useFetch('http://localhost:1000/')
+    const [cars] = useFetch('https://autoshop.onrender.com')
 
 
     return ( 
