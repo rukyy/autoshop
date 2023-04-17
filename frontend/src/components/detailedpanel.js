@@ -9,7 +9,7 @@ const Detailedpannel = () => {
 
     useEffect(()=>{
         const fetchcar = async ()=>{
-            const response =await fetch(`http://localhost:1000/${id}`)
+            const response =await fetch(`https://autoshop.onrender.com/${id}`)
             const data = await response.json()
             if(data){
                 setcar(data)
