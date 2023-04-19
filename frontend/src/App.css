@@ -415,7 +415,6 @@ input{
 .forgotpassword{
   display: block;
   font-size: 12px;
-
   width: 45%;
 }
 .logincard h2{
@@ -435,7 +434,7 @@ input{
   outline: none;
   border: none;
   width: 25%;
-  padding: 2%;
+  padding: 1%;
   background-color: #f8c12a;
   border-radius: 10px;
   letter-spacing: 1px;
@@ -449,4 +448,16 @@ input{
 .logincard p{
   margin: 2%;
 }
+@media screen and (max-width:500px) {
+  .logincard button{
+    margin: 4%;
+    padding: 1%;
+    width: 50%;
+    font-size: 16px;
+  }
+  form{
+    width: 90%;
+  }
+}
+
 
