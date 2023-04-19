@@ -171,11 +171,16 @@ p{
   position: relative;
   margin-top: 1%;
 }
-ul{
+.navbar ul{
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   margin-left: 50%;
+  width: 500px;
+}
+
+.fa{
+  display: inline;
 }
 h3{color: #f8c12a;}
 
@@ -391,3 +396,57 @@ p{
       -ms-flex-align: center;
           align-items: center;
 }
+
+
+.login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logincard{
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input{
+  display: block;
+}
+.forgotpassword{
+  display: block;
+  font-size: 12px;
+
+  width: 45%;
+}
+.logincard h2{
+  margin: 3% 5% 0 5%;
+}
+form{
+  width: 50%;
+}
+input{
+  margin: 5% 5% 0 5%;
+  padding: 5%;
+  width: 100%;
+  border-radius: 10px;
+}
+.logincard button{
+  margin: 2%;
+  outline: none;
+  border: none;
+  width: 25%;
+  padding: 2%;
+  background-color: #f8c12a;
+  border-radius: 10px;
+  letter-spacing: 1px;
+  font-size: 20px;
+  color: white;
+}
+.logincard p a{
+  text-decoration: none;
+  color: #f8c12a;
+}
+.logincard p{
+  margin: 2%;
+}
+
