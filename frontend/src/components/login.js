@@ -2,8 +2,8 @@ import { useState } from "react";
 
 const Login = () => {
 
-    let [emailaddress, setemailaddress] = useState('')
-    let [password, setpassword]=useState('')
+    const [emailaddress, setemailaddress] = useState('')
+    const [password, setpassword]=useState('')
 
 
     return ( <div className="login">

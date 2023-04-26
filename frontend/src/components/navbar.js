@@ -20,16 +20,16 @@ const NavBar = () => {
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="navigate nav-item">
-                  <Link to={'/'} className="nav-link"><i className="fa fa-bell" aria-hidden="true"></i>Notification </Link>
+                  <Link to="/" className="nav-link"><i className="fa fa-bell" aria-hidden="true"></i>Notification </Link>
                 </li>
                 <li class="navigate nav-item">
-                  <Link to={'/'} className="nav-link " aria-current="page"><i className="fa fa-user" aria-hidden="true"></i> Profile</Link>
+                  <Link to="/" className="nav-link " aria-current="page"><i className="fa fa-user" aria-hidden="true"></i> Profile</Link>
                 </li>
                 <li class="navigate nav-item">
-                  <Link to={'/'} className="nav-link"><i className="fa fa-question-circle" aria-hidden="true"></i> Help</Link>
+                  <Link to="/" className="nav-link"><i className="fa fa-question-circle" aria-hidden="true"></i> Help</Link>
                 </li>
                 <li class="navigate nav-item">
-                  <Link to={'/login'} className="nav-link"><i className="fa fa-question-circle" aria-hidden="true"></i>signin/register </Link>
+                  <Link to="/login" className="nav-link"><i className="fa fa-question-circle" aria-hidden="true"></i>signin/register </Link>
                 </li>
               </ul>
             </div>
