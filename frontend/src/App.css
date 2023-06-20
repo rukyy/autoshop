@@ -556,5 +556,66 @@ input{
   transform: rotate(330deg) translate(0, -130%);
   animation-delay: -0.1s;
 }
-
-
+.signupinput{
+  width: 35%;
+  background-color: #f8c12a;
+  margin: 0 auto;
+  color: white;
+  border-radius: 15px;
+  padding: 1%;
+  font-size: 16px;
+  letter-spacing: 2px;
+  margin: 3% auto;
+}
+::-ms-reveal {
+  filter: invert(100%);
+}
+.signup{
+  text-align: center;
+  background-image: linear-gradient(to top, #ffffff, #ffffff, #ffffff, #ffffff, #ffffff);
+}
+.signup input{
+    width: 70%;
+    height: 20px;
+    /* padding: 4%; */
+    margin: 2.5%;
+    background-color: #f8c12a;
+    border: 0;
+    border-bottom: 1px solid white;
+    border-radius: 0;
+    color: white;
+    letter-spacing: 3px;
+}
+.signupinput a{
+  color: white;
+}
+.signup input::placeholder{
+  color: white;
+}
+.signup input:active,.signup input:focus{
+  border: 0;
+  border-bottom: 1px solid white;
+  outline: 0;
+}
+.signup form{
+  margin: 0 auto;
+  width: 100%;
+  padding: 2%;
+  background-color: #f8c12a;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+}
+.signupinput button{
+  border: 0;
+  border-radius: 10px;
+  width: 20%;
+  background-color: #ffffff;
+  padding: 1%;
+  color: #f8c12a;
+  box-shadow: 3px 2px 4px 4px  #ffffff;
+  margin: 2% auto;
+}

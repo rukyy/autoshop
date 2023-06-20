@@ -4,6 +4,7 @@ import NavBar from './components/navbar';
 import Home from './components/home';
 import Detailedpannel from './components/detailedpanel';
 import Login from './components/login';
+import Signup from './components/signup';
 
 function App() {
   return (
@@ -19,6 +20,9 @@ function App() {
           </Route>
           <Route exact path='/login'>
             <Login/>
+          </Route>
+          <Route exact path='/signup'>
+            <Signup/>
           </Route>
         </Switch>
       </div>

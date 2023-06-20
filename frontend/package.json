@@ -1,4 +1,5 @@
 {
+  "proxy":"http://localhost:1000",
   "proxy":"https://autoshop.onrender.com",
   "name": "frontend",
   "version": "0.1.0",
