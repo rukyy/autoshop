@@ -20,7 +20,7 @@ const Signup = () => {
         }
         const userinfo = {firstname, lastname, email, password}
         // console.log(userinfo)
-        const response = await fetch("/api/signup",
+        const response = await fetch("https://autoshopp.netlify.app/signup",
         {
             method:"POST",
             body:JSON.stringify(userinfo),
