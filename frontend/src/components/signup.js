@@ -1,46 +1,26 @@
 import {  useState } from "react";
-import { useContexthook } from "../hooks/useContexthook";
+import { useSignup } from "../hooks/useSignup";
 
 
 
 const Signup = () => {
-    const {dispatch}= useContexthook()
+
 
     const [firstname, setfirstname]= useState('')
     const [lastname, setlastname] = useState('')
     const [email, setemail] = useState('')
     const [password, setpassword]= useState('')
     const [confirmpassword, setconfirmpassword] = useState('')
-    const [error, seterror] = useState(false)
+    const {signup, error, isloading}= useSignup()
 
     const handlesubmit = async (e)=>{
         e.preventDefault()
         if(password!==confirmpassword){
             throw Error("Please confirm your password")
         }
-        const userinfo = {firstname, lastname, email, password}
-        // console.log(userinfo)
-        const response = await fetch("https://autoshop.onrender.com/api/signup",
-        {
-            method:"POST",
-            body:JSON.stringify(userinfo),
-            headers:{"Content-Type":"application/json"}
-        }
-        )
-        const json = await response.json()
-        if(!response.ok){
-            seterror(json.error)
-            console.log(error)
-        }
-        if(response.ok){
-            setfirstname('')
-            setlastname('')
-            setemail('')
-            setpassword('')
-            setconfirmpassword('')
-            dispatch({type:"LOGIN",payload:json})
-            console.log(json)
-        }
+        
+        await signup(firstname, lastname, email, password)
+
     
     }
     return ( <div className="signup">
@@ -49,30 +29,36 @@ const Signup = () => {
             <form onSubmit={handlesubmit}>
                 <input type="text"
                 required
-                value={firstname}
                 placeholder="firstname"
-                onChange={(e)=>{setfirstname(e.target.value)}} />
+                onChange={(e)=>{setfirstname(e.target.value)}}
+                value={firstname} />
+                
                 <input type="text"
                 required
-                value={lastname}
                 placeholder="lastname"
-                onChange={(e)=>{setlastname(e.target.value)}} />
+                onChange={(e)=>{setlastname(e.target.value)}} 
+                value={lastname}/>
+                 
                 <input type="text"
                 required
-                value={email}
                 placeholder="email"
-                onChange={(e)=>{setemail(e.target.value)}} />
+                onChange={(e)=>{setemail(e.target.value)}} 
+                value={email}/>
+
                 <input type="password"
                 required
-                value={password}
                 placeholder="password"
-                onChange={(e)=>{setpassword(e.target.value)}}/>
+                onChange={(e)=>{setpassword(e.target.value)}}
+                value={password}/>
+
                 <input type="password"
                 required
-                value={confirmpassword}
                 placeholder="confirm password"
-                onChange={(e)=>{setconfirmpassword(e.target.value)}} />
-                <button >Sign up</button>
+                onChange={(e)=>{setconfirmpassword(e.target.value)}}
+                value={confirmpassword} />
+                
+                <button disabled={isloading} >Sign up</button>
+                {error && <div>{error}</div>}
             </form>
             
             <p>Already have an account? <a href="/login"> login</a></p>

@@ -3,7 +3,7 @@ const User =require("../databasemodel/usermodel")
 const jwt = require('jsonwebtoken')
 
 const createtoken = (_id)=>{
-   return jwt.sign({_id}, process.env.SECRETSTRING)
+   return jwt.sign({_id}, process.env.JWT_SECRET)
 }
 
 // Login
@@ -23,12 +23,14 @@ const loginUser = async (req,res)=>{
 // signup
 const signUp = async (req,res)=>{
     const {firstname,lastname,email,password}=req.body
+    console.log(firstname,email)
 
     try {
         const user = await User.signup(firstname,lastname,email,password)
         // create a token
         const token = createtoken(user._id)
         res.status(200).json({email,token})
+        console.log(firstname,email)
     } catch (error) {
         res.status(400).json({error:error.message})
     }

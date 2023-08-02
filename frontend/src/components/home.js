@@ -9,9 +9,9 @@ const Home = () => {
     const [cars, ispending] = useFetch('https://autoshop.onrender.com')
 
 
-    return ( 
+    return (
         <div className="container">
-           {ispending && <div class="loader">
+            {ispending && <div class="loader">
                 <div class="bar1"></div>
                 <div class="bar2"></div>
                 <div class="bar3"></div>
@@ -26,16 +26,16 @@ const Home = () => {
                 <div class="bar12"></div>
             </div>}
             <div className="row">
-                {cars && <div className=" bootel">{cars&&cars.map((car)=>(
-                    <div className=" col-12 col-md-4 col-lg-4 col-xl-4 card">
-                        <div className="carpic" style={{backgroundImage:`url(photos/${car.picname}.jpg)`}}><button className="addtocart">Purchase</button> </div>
+                {cars && <div className=" bootel">{cars && cars.map((car) => (
+                    <div key={Math.random()} className=" col-12 col-md-4 col-lg-4 col-xl-4 card">
+                        <div className="carpic" style={{ backgroundImage: `url(photos/${car.picname}.jpg)` }}><button className="addtocart">Purchase</button> </div>
                         <Link className="link" to={`/cars/${car._id}`}><p> <b>Brand</b>: {car.brand}<br /> <b>Name</b>: {car.model}<br /><b>Year</b>: {car.year}  <br /><b>Price</b>: {car.Price} <br /><b>Color</b>: {car.color}</p></Link>
-                    </div>  
+                    </div>
                 ))}</div>}
             </div>
-            <Info/>
+            <Info />
         </div>
-     );
+    );
 }
- 
+
 export default Home;

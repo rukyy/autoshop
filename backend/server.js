@@ -9,12 +9,11 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-
 app.use('/',carroutes)
 app.use('/api',userroutes)
 mongoose.connect(process.env.URI)
-.then(
-    ()=>{app.listen(process.env.PORT,()=>console.log('listening on port 1000'))
+.then(  
+    ()=>{app.listen(process.env.PORT,()=>console.log('listening on port 4000'))
 })
 .catch(
     (error)=>{console.log(error)}
